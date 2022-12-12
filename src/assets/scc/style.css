@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html,body,#app{
+    /* width: 100%; */
+    max-width: 1440px;
+    min-width: 1300px;
+    max-height: 820px;
+    /* min-height: 634px; */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
