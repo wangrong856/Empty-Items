@@ -1,5 +1,5 @@
 <template>
-  <svg class="svg-icon" aria-hidden="true" :style="{ width: w, height: h }">
+  <svg class="svg-icon" aria-hidden="true" :style="{ width: w + 'rem', height: h + 'rem'}">
     <use :xlink:href="iconName" :style="{ fill: color }"></use>
   </svg>
 </template>
@@ -17,12 +17,12 @@ export default {
       default: "#000",
     },
     w: {
-      type: String,
-      default: "1rem",
+      type: [String,Number],
+      default: "1",
     },
     h: {
-      type: String,
-      default: "1rem",
+      type: [String,Number],
+      default: "1",
     },
   },
   computed: {
