@@ -28,12 +28,10 @@
         <div class="bullshit__oops">{{ $t("notObj.tips_name") }}</div>
         <div class="bullshit__info">
           {{ $t("notObj.copyright_name") }}
-          <a
-            style="color: #20a0ff"
+          <!-- 
             href="https://wallstreetcn.com"
-            target="_blank"
-            >wallstreetcn</a
-          >
+           -->
+          <a style="color: #20a0ff" target="_blank" href="javascript:;">wallstreetcn</a>
         </div>
         <div class="bullshit__headline" style="height: 48px">
           {{ $t("notObj.context_name") }}
@@ -71,15 +69,15 @@ export default {
 <style lang="scss" scoped>
 .wscn-http404-container {
   transform: translate(-50%, -50%);
-  position: absolute;
+  position: relative;
   top: 40%;
   overflow: hidden;
   left: 50%;
   .zh_box {
     width: 50px;
     height: 50px;
-    position: fixed;
-    right: 0%;
+    position: absolute;
+    right: 10%;
     top: 0%;
     font-family: serif;
     cursor: pointer;

@@ -8,7 +8,6 @@
 
 html,body,#app{
     max-width: 1440px;
-    min-width: 1300px;
     max-height: 820px;
     height: 100%;
     margin: 0;
@@ -16,4 +15,13 @@ html,body,#app{
     box-sizing: border-box;
     background: url(../backgroundImage/white_wall_hash.webp) ;
     /* background-color: #fff; */
+}
+#app{
+    min-width: 1300px;
+}
+.scrollbar-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.el-scrollbar,.el-scrollbar__view {
+    height: 100%;
 }
