@@ -11,6 +11,7 @@ module.exports = defineConfig({
     port: port,
     // 是否默认启动
     open: true,
+    host: "localhost",
     proxy: {
       [process.env.VUE_APP_BASE_API]: {
         target: process.env.VUE_APP_BASE_URL,

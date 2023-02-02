@@ -1,7 +1,28 @@
 <template>
   <div class="loaders" v-show="isShow" id="loader">
     <div class="scanner">
-      <span>Loading...</span>
+      <div class="loader">
+        <span style="--i: 1"></span>
+        <span style="--i: 2"></span>
+        <span style="--i: 3"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 5"></span>
+        <span style="--i: 6"></span>
+        <span style="--i: 7"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 15"></span>
+        <span style="--i: 16"></span>
+        <span style="--i: 17"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 19"></span>
+        <span style="--i: 20"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -12,7 +33,7 @@ export default {
 
   data() {
     return {
-      isShow:false
+      isShow: false,
     };
   },
 
@@ -26,69 +47,54 @@ export default {
 .loaders {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   background: hwb(0deg 0% 100% / 78%);
   top: 0;
   left: 0;
 }
-.scanner span {
-  color: transparent;
-  font-size: 1.4rem;
-  overflow: hidden;
+.scanner {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.loader {
+  position: relative;
+  width: 88px;
+    height: 88px;
+}
 
-.scanner span::before {
-  content: "Loading...";
+.loader span {
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 100%;
-  border-right: 4px solid #17feff;
-  overflow: hidden;
-  color: #17feff;
-  animation: load91371 2s linear infinite;
+  transform: rotate(calc(18deg * var(--i)));
 }
 
-@keyframes load91371 {
-  0%,
-  10%,
-  100% {
-    width: 0;
+.loader span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FCF7FF;
+  box-shadow: 0 0 10px #FCF7FF, 0 0 20px #FCF7FF, 0 0 40px #FCF7FF,
+    0 0 60px #FCF7FF, 0 0 80px #FCF7FF, 0 0 100px #FCF7FF;
+  animation: animate34 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animate34 {
+  0% {
+    transform: scale(1);
   }
 
-  10%,
-  20%,
-  30%,
-  40%,
-  50%,
-  60%,
-  70%,
   80%,
-  90%,
   100% {
-    border-right-color: transparent;
-  }
-
-  11%,
-  21%,
-  31%,
-  41%,
-  51%,
-  61%,
-  71%,
-  81%,
-  91% {
-    border-right-color: #17feff;
-  }
-
-  60%,
-  80% {
-    width: 100%;
+    transform: scale(0);
   }
 }
 </style>

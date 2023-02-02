@@ -7,17 +7,14 @@
 }
 
 html,body,#app{
-    max-width: 1440px;
-    max-height: 820px;
+    /* max-width: 1440px; */
+    /* max-height: 820px; */
     height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: url(../backgroundImage/white_wall_hash.webp) ;
-    /* background-color: #fff; */
+    /* background: url(../backgroundImage/white_wall_hash.webp) ; */
 }
 #app{
-    min-width: 1300px;
+    /* min-width: 1300px; */
+    position: relative;
 }
 .scrollbar-wrapper::-webkit-scrollbar {
     display: none;
