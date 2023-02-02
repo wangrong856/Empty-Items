@@ -16,14 +16,12 @@ import 'vant/lib/index.css';
 import "@/assets/scc/style.css"
 // 引入element-ui样式
 import 'element-ui/lib/theme-chalk/index.css';
-import 'nprogress/nprogress.css'
 
 // 安装饿了吗组件
 Vue.use(ElementUI);
 // 安装vant样式
 Vue.use(Vant);
 
-Vue.config.productionTip = false
 
 // 时间过滤器
 moment.locale('zh-cn');
