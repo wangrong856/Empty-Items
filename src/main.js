@@ -8,12 +8,16 @@ import components from '@/components'
 import moment from 'moment'
 import Vant from 'vant';
 
+import '@/styles/index.scss' // global css
+
+
 // 引入图标样式
 import '@/assets/icons'
 
 // 引入vant样式
 import 'vant/lib/index.css';
 import "@/assets/scc/style.css"
+
 // 引入element-ui样式
 import 'element-ui/lib/theme-chalk/index.css';
 

@@ -4,6 +4,12 @@ const path = require("path")
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
+
+const defaultSettings = require('./src/settings.js')
+
+const name = defaultSettings.title || 'vue Admin Template' // page title
+
+
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
@@ -36,6 +42,15 @@ module.exports = defineConfig({
         symbolId: "icon-[name]",
       })
       .end()
+  },
+
+  configureWebpack: {
+    // provide the app's title in webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    name: name,
+    resolve: {
+      fallback: { path: require.resolve('path-browserify') }
+    }
   },
 })
 

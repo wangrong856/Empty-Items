@@ -62,7 +62,7 @@
         <span class="button_top"> Login </span>
       </button>
 
-      <div style="position: relative">
+      <div style="position: relative;margin-top: 8px" >
         <div class="tips">
           <span>Username : admin</span>
           <span>Password : any</span>
@@ -124,8 +124,7 @@ export default {
       immediate: true,
     },
   },
-  created() {
-  },
+  created() {},
   mounted() {
     if (this.loginForm.username === "") {
       this.$refs.username.focus();
@@ -133,8 +132,7 @@ export default {
       this.$refs.password.focus();
     }
   },
-  destroyed() {
-  },
+  destroyed() {},
   methods: {
     checkCapslock(e) {
       const { key } = e;
@@ -154,8 +152,14 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           this.loading = true;
-          this.$message.success("登录成功");
-          this.$router.push('/layout')
+          this.$store.dispatch('user/login', this.loginForm).then(() => {
+            this.$router.push({ path: this.redirect || '/' })
+            this.loading = false
+          }).catch(() => {
+            this.loading = false
+          })
+          // this.$message.success("登录成功");
+          // this.$router.push("/dashboard");
         } else {
           console.log("error submit!!");
           return false;

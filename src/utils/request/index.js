@@ -26,7 +26,7 @@ instent.interceptors.request.use(function (config) {
 // 添加响应拦截器
 instent.interceptors.response.use(function (response) {
     vm.$hiddenLoading()
-    return response
+    return response.data
 }, function ({ response }) {
     vm.$hiddenLoading()
     return Promise.reject(response);

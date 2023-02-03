@@ -1,12 +1,13 @@
 <template>
-    <div class="RightPanel">
-        RightPanel
+    <div class="form">
+        form
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'VueAppRightPanel',
+    name: 'VueAppIndex',
 
     data() {
         return {
@@ -25,7 +26,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .RightPanel{
-        flex: 1;
-    }
+
 </style>
