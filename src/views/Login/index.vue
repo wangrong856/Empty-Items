@@ -9,7 +9,7 @@
       label-position="left"
     >
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">W Login</h3>
       </div>
 
       <el-form-item prop="username">
@@ -62,15 +62,8 @@
         <span class="button_top"> Login </span>
       </button>
 
-      <div style="position: relative;margin-top: 8px" >
-        <div class="tips">
-          <span>Username : admin</span>
-          <span>Password : any</span>
-        </div>
-        <div class="tips">
-          <span style="margin-right: 18px">Username : editor</span>
-          <span>Password : any</span>
-        </div>
+      <div style="position: relative; margin-top: 8px">
+
       </div>
     </el-form>
   </div>
@@ -89,8 +82,8 @@ export default {
     };
     return {
       loginForm: {
-        username: "admin",
-        password: "111111",
+        username: "13800000002",
+        password: "123456",
       },
       loginRules: {
         username: [
@@ -152,14 +145,17 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           this.loading = true;
-          this.$store.dispatch('user/login', this.loginForm).then(() => {
-            this.$router.push({ path: this.redirect || '/' })
-            this.loading = false
-          }).catch(() => {
-            this.loading = false
-          })
-          // this.$message.success("登录成功");
-          // this.$router.push("/dashboard");
+          this.$store
+            .dispatch("user/login", this.loginForm)
+            .then(() => {
+              this.$router.push({ path: this.redirect || "/" });
+              this.loading = false;
+              this.$message.success("登录成功");
+            })
+            .catch(() => {
+              this.$message.error("登录失败")
+              this.loading = false;
+            });
         } else {
           console.log("error submit!!");
           return false;
