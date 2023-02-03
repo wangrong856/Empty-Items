@@ -39,7 +39,7 @@
         <div class="bullshit__info" style="height: 42px">
           {{ $t("notObj.to_home_name") }}
         </div>
-        <a href="" class="bullshit__return-home">{{
+        <a @click="$router.push('/')" class="bullshit__return-home">{{
           $t("notObj.button_name")
         }}</a>
       </div>

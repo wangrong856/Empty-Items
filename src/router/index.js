@@ -33,29 +33,26 @@ const routes = [
     ]
   },
   {
-    path:'/form',
-    component:layout,
-    meta:{
-      title:"表单",
-      icon:"form"
+    path: '/form',
+    component: layout,
+    redirect: '/form/leve',
+    name:'表单',
+    meta: {
+      title: "表单",
+      icon: "form"
     },
-    children:[
+    children: [
       {
-        path:'/form',
-        component:()=>import("@/views/Form"),
-
+        path: "leve",
+        component: () => import("@/views/Form/leve"),
+        name:"数据",
+        meta: {
+          title: "数据",
+        },
         children:[
-          {
-            path:"/leve",
-            component:()=>import("@/views/Form/leve"),
-            meta:{
-              title:"数据",
-              icon:"form"
-            }
-          }
+          
         ]
       },
-
     ]
   },
   {
